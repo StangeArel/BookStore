@@ -205,15 +205,12 @@ function getBookTemplate(i) {
                 
 
                 <div class="separator"></div>
-                <div class="visible-scrollbar">
-                    <p>Dies ist ein langer Text, der den Container ausfüllt.</p>
-                    <p>Füge hier weiteren Inhalt hinzu, um den Scrollbalken zu aktivieren.</p>
-                    <p>Du kannst beliebig viele Absätze hinzufügen, um zu testen.</p>
-                    <p>Du kannst beliebig viele Absätze hinzufügen, um zu testen.</p>
+                <div class="visibleScrollbar">
+                    ${getComments(i)}
                 </div>
                 <div class="submitComment">
-                    <input class="commentSubmit" type="text" placeholder="Schreibe dein Kommentar...">
-                    <img class="iconCommentSubmit" src="./imgs/paper_planer_icon.png" alt="icon.paper_planer_submit">
+                    <input class="commentSubmit" id="commentSubmit${i}" type="text" placeholder="Schreibe dein Kommentar...">
+                    <img onclick="addComment(${i})" class="iconCommentSubmit" src="./imgs/paper_planer_icon.png" alt="icon.paper_planer_submit">
                 </div>
             </div>`
 }
@@ -250,3 +247,23 @@ function like(i) {
     books[i].likes++;
     showBookList();
 }
+
+function getComments(i) {
+    let allComments = ``;
+    for (let indexComments = 0; indexComments < books[i].comments.length; indexComments++) {
+        allComments += `<p>${books[i].comments[indexComments].name} :${books[i].comments[indexComments].comment}</p>`;
+    }
+    return allComments;
+}
+
+function addComment(i) {
+    let input = document.getElementById(`commentSubmit${i}`);
+    let comment = input.value;
+    books[i].comments.push({
+        "name": "Weihnachtsmann",
+        "comment": comment
+    });
+    showBookList();
+}
+
+

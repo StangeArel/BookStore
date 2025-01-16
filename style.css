@@ -107,7 +107,7 @@ body {
     box-shadow: 0 0 5px var(--bg_blue_light), 0 0 25px var(--bg_blue_light), 0 0 50px var(--bg_blue_light), 0 0 200px var(--bg_blue_light);
 }
 
-.visible-scrollbar {
+.visibleScrollbar {
     width: 39rem;
     height: 19rem;
     overflow-y: auto;
@@ -115,23 +115,24 @@ body {
     overflow-x: hidden;
     /* Horizontales Scrollen deaktivieren */
     padding: 10px;
+    border: 1px solid white;
 }
 
-.visible-scrollbar::-webkit-scrollbar {
+.visibleScrollbar::-webkit-scrollbar {
     width: 20px;
 }
 
-.visible-scrollbar::-webkit-scrollbar-track {
+.visibleScrollbar::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
     border-radius: 10px;
 }
 
-.visible-scrollbar::-webkit-scrollbar-thumb {
+.visibleScrollbar::-webkit-scrollbar-thumb {
     background: red;
     border-radius: 10px;
 }
 
-.visible-scrollbar::-webkit-scrollbar-thumb:hover {
+.visibleScrollbar::-webkit-scrollbar-thumb:hover {
     background: #b30000;
 }
 
