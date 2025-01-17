@@ -189,7 +189,7 @@ function getBookTemplate(i) {
         </div>
     </div>
     <div class="autorObject">
-        <table>
+        <table class="responsiveTable">
             <tr>
                 <td>Author</td>
                 <td><b>: ${books[i].author}</b></td>
@@ -252,7 +252,7 @@ function like(i) {
 function getComments(i) {
     let allComments = ``;
     for (let indexComments = 0; indexComments < books[i].comments.length; indexComments++) {
-        allComments += `<p>${books[i].comments[indexComments].name} :${books[i].comments[indexComments].comment}</p>`;
+        allComments += `<p><div class="nameAndComment"><div class="commentName">${books[i].comments[indexComments].name}</div> <div class="comment">${books[i].comments[indexComments].comment}</div></div></p>`;
     }
     return allComments;
 }

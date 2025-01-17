@@ -6,9 +6,9 @@
     --bg_blue_light: rgb(106, 179, 194);
 }
 
-h1{
-margin: 21px;
-text-align: center;
+h1 {
+    margin: 21px;
+    text-align: center;
 }
 
 body {
@@ -74,12 +74,10 @@ body {
     flex-wrap: wrap;
     flex-direction: row;
     flex: 1;
-
     flex-wrap: wrap;
     justify-content: center;
     row-gap: 20px;
     column-gap: 15px;
-
     padding: 20px 0;
     align-items: center;
 }
@@ -108,14 +106,29 @@ body {
 }
 
 .visibleScrollbar {
-    width: 39rem;
+    width: 77%;
     height: 19rem;
     overflow-y: auto;
     /* Nur vertikales Scrollen zulassen */
     overflow-x: hidden;
     /* Horizontales Scrollen deaktivieren */
     padding: 10px;
-    border: 1px solid white;
+    font-size: 20px;
+    color: var(--bg_whitesmoke);
+}
+
+.nameAndComment {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.commentName {
+    flex: 1;
+}
+
+.comment {
+    flex: 2;
 }
 
 .visibleScrollbar::-webkit-scrollbar {
@@ -152,7 +165,8 @@ body {
 }
 
 .commentSubmit {
-    flex-grow: 1; /* Nutzt den verfügbaren Platz */
+    flex-grow: 1;
+    /* Nutzt den verfügbaren Platz */
     height: 40px;
     width: 100%;
     height: 100%;
@@ -165,6 +179,8 @@ body {
     -o-border-radius: 5px 5px 0 0;
     border: none;
     border-bottom: 2px solid var(--bg_blue_light);
+    color: var(--bg_whitesmoke);
+    font-size: 20px;
 }
 
 .iconCommentSubmit {
@@ -184,12 +200,7 @@ body {
     gap: 10px;
 }
 
-.like-icon{
-    width: 40px;
-    height: 40px;
-}
-
-.likesPriceAuthor{
+.likesPriceAuthor {
     width: 75%;
     display: flex;
     justify-content: center;
@@ -212,7 +223,7 @@ body {
     width: 80%;
 }
 
-td{
+td {
     padding: 10px 20px;
     font-size: 18px;
 }
@@ -224,11 +235,36 @@ td{
 }
 
 .heartLikeNotClicked,
-.heartLikeClicked{
+.heartLikeClicked {
     width: 30px;
     height: 30px;
 }
 
+.responsiveTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.responsiveTable tr {
+    display: table-row;
+}
+
+.responsiveTable td {
+    padding: 8px;
+}
+
+@media (max-width: 540px) {
+    .responsiveTable tr {
+        display: block;
+        margin-bottom: 20px;
+        border-bottom: 1px solid var(--bg_blue_light);
+    }
+
+    .responsiveTable td {
+        display: block;
+        text-align: left;
+    }
+}
 
 @media (max-width: 768px) {
 
