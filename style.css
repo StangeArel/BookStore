@@ -85,9 +85,7 @@ body {
 .aboutThisBook {
     background-color: var(--bg_darkblue_dark);
     border-radius: 15px;
-    height: 60rem;
     width: 50rem;
-    max-height: 100vh;
     max-width: 90%;
     display: flex;
     flex-direction: column;
@@ -125,10 +123,12 @@ body {
 
 .commentName {
     flex: 1;
+    word-break: break-all;
 }
 
 .comment {
     flex: 2;
+    word-break: break-word;
 }
 
 .visibleScrollbar::-webkit-scrollbar {
@@ -143,14 +143,16 @@ body {
 .visibleScrollbar::-webkit-scrollbar-thumb {
     background: red;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .visibleScrollbar::-webkit-scrollbar-thumb:hover {
     background: #b30000;
+    cursor: pointer;
 }
 
 .imgBook {
-    width: 17.5rem;
+    width: 40%;
     height: auto;
     object-fit: cover;
 }
@@ -181,6 +183,7 @@ body {
     border-bottom: 2px solid var(--bg_blue_light);
     color: var(--bg_whitesmoke);
     font-size: 20px;
+    cursor: pointer;
 }
 
 .iconCommentSubmit {
@@ -192,6 +195,7 @@ body {
     -moz-transform: rotate(10deg);
     -ms-transform: rotate(10deg);
     -o-transform: rotate(10deg);
+    cursor: pointer;
 }
 
 .likesContainer {
@@ -238,6 +242,7 @@ td {
 .heartLikeClicked {
     width: 30px;
     height: 30px;
+    cursor: pointer;
 }
 
 .responsiveTable {
@@ -267,7 +272,6 @@ td {
 }
 
 @media (max-width: 768px) {
-
     .header h3,
     .footer h3 {
         display: none;
@@ -275,9 +279,15 @@ td {
 }
 
 @media (max-width: 568px) {
-
     .header h2,
     .footer h2 {
         display: none;
+    }
+}
+
+@media(max-width: 760px) {
+    .nameAndComment {
+        flex-direction: column;
+        align-items: stretch;
     }
 }

@@ -252,7 +252,7 @@ function like(i) {
 function getComments(i) {
     let allComments = ``;
     for (let indexComments = 0; indexComments < books[i].comments.length; indexComments++) {
-        allComments += `<p><div class="nameAndComment"><div class="commentName">${books[i].comments[indexComments].name}</div> <div class="comment">${books[i].comments[indexComments].comment}</div></div></p>`;
+        allComments += `<p><div class="nameAndComment"><div class="commentName">${books[i].comments[indexComments].name}:</div> <div class="comment">${books[i].comments[indexComments].comment}</div></div></p>`;
     }
     return allComments;
 }
@@ -266,5 +266,4 @@ function addComment(i) {
     });
     showBookList();
 }
-
 
